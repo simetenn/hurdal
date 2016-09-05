@@ -1,0 +1,33 @@
+Computational models in neuroscience typically contain a number of parameters
+that are poorly constrained by experimental data. The sources of parameter
+uncertainty may be many, including measurement uncertainty and variability in
+the parameter values within a population of cells or dynamically within a single
+cell. By quantifying the uncertainties in features of the model output we can
+determine the effects of measurement uncertainty as well as the uncertainty
+arising from the intrinsic variability.
+
+The standard method of accounting for this uncertainty/variability is to assign
+a probability distribution instead of a single value to the parameter value, and
+then to compute the corresponding uncertainty in the model output with Monte
+Carlo methods.  A more recent mathematical framework for estimating
+uncertainties is that of Polynomial Chaos expansions (Xiu & Hesthaven, SIAM J.
+Sci. Comput., 2005). Polynomial Chaos is much faster than the standard Monte
+Carlo methods used for uncertainty quantification as long as the number of
+uncertain parameters is relatively low, typically smaller than about twenty.
+This is the case for many, if not most, neuroscience models.
+
+Here we present UncertainPy, a novel Python toolbox, tailored to perform
+uncertainty quantification in neuroscience models. UncertainPy bases its
+uncertainty analysis on quasi-Monte Carlo methods or Polynomial Chaos, depending
+on the number of uncertain model parameters. Polynomial Chaos expansions are
+obtained from the previously developed package Chaospy (Feinberg & Langtangen,
+Journal of Computational Science, 2015). UncertainPy is feature based, i.e., if
+applicable, it recognizes and calculates the uncertainty in salient model
+response features such as spike timing, action potential shape and similar.
+UncertainPy is parallelized, has support for a wide range of different models,
+and can easily be customized to new models and features.
+
+To demonstrate UncertainPy, we perform uncertainty analysis of (i) the standard
+Hodgkin-Huxley point-neuron model for action-potential generation and (ii) a
+comprehensive multi-compartmental model for interneurons in the dorsal lateral
+geniculate nucleus (Halnes et al, PLoS Comp Biol, 2011).
