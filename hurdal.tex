@@ -1,4 +1,4 @@
-%\documentclass[handout]{beamer}
+% \documentclass[handout]{beamer}
 \documentclass[presentation]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, pdfpages, pdflscape, lscape, color, listings, hyperref, amssymb, graphicx, textcomp,varioref, afterpage, subcaption, float, bm, tikz, colortbl}
@@ -125,12 +125,11 @@ columns=fixed
 
 
 \begin{frame}
-\begin{center}
-    \textbf{\color{myred}\Large Uncertainpy: \\
-    \vspace{1mm} A Python toolbox for uncertainty\\
-    \vspace{1mm} quantification of computational neuroscience \\
-    \vspace{1mm}  models}
-\end{center}
+% \begin{center}
+    \textbf{\color{myred}\Large Uncertainpy: A Python toolbox \\
+    \vspace{1mm} for uncertainty quantification of \\
+    \vspace{2mm} computational neuroscience models}
+% \end{center}
 
 % \frametitle{\textbf{\color{myred}\Large Chaospy: \\ \vspace{1mm} A modular implementation of polynomial\\ \vspace{1mm} chaos expansions and Monte Carlo methods}}
 
@@ -152,10 +151,10 @@ columns=fixed
       \vspace{5mm}
     \small University of Oslo, CINPLA
  %
- % \begin{tikzpicture}[remember picture,overlay]
- %    \node [xshift=0.2\paperwidth,yshift=-0.14\paperheight] at (current page.center)
- %          {\includegraphics[width = 0.5\paperwidth ]{chaospy_logo.jpg}};
- %  \end{tikzpicture}
+ \begin{tikzpicture}[remember picture,overlay]
+    \node [xshift=0.19\paperwidth,yshift=-0.14\paperheight] at (current page.center)
+          {\includegraphics[width = 0.5\paperwidth ]{hh_confidence_basic.png}};
+  \end{tikzpicture}
 
   \begin{tikzpicture}[remember picture,overlay]
     \node [xshift=1.35cm,yshift=0.55cm] at (current page.south west)
@@ -167,7 +166,7 @@ columns=fixed
 
 
 
-\begin{frame}[fragile]{Uncertainpy is a Python toolbox for uncertainty quantification of computation neuroscience models}
+% \begin{frame}[fragile]{Uncertainpy is a Python toolbox for uncertainty quantification of computation neuroscience models}
 
 
   %   \begin{tikzpicture}[remember picture, overlay, font=\sffamily]
@@ -193,97 +192,200 @@ columns=fixed
 %       \node[align=left] at (image2.east) {\hspace{4cm} \bf Polynomial Chaos};
 %     \end{tikzpicture}
 
-\end{frame}
+% \end{frame}
 
 
-\begin{frame}{Creating a computational model consists of three steps, model creation, parameter estimation and uncertainty quantification}
-    \begin{tikzpicture}[remember picture, overlay, font=\sffamily]
-      \onslide<1-3>{\node [align=left, xshift=-0.35\textwidth,yshift=0.15\textwidth] (image3) at (current page.center)
-            {$I = C_m\frac{{\mathrm d} V_m}{{\mathrm d} t}  + I_{\text{ion channels}}$};
-      \node[align=left] at (image3.east) {\hspace{4cm} \bf Model creation};}
-    \end{tikzpicture}
-   %
-   % \begin{tikzpicture}[remember picture, overlay, font=\sffamily]
-   %   \onslide<1-3>{\node [align=left, xshift=-0.4\textwidth,yshift=0.15\textwidth] (image3) at (current page.center)
-   %         {\includegraphics[width = 0.4\textwidth]{compartmental.png}};
-   %   \node[align=left] at (image3.east) {\hspace{5cm} \bf Model creation};}
-   % \end{tikzpicture}
 
-  \begin{tikzpicture}[remember picture, overlay, font=\sffamily]
-  \onslide<2-3>{\node [align=left, xshift=-0.2\textwidth,yshift=-0.05\textwidth] (image1) at (current page.center)
-      {\includegraphics[width = 0.15\textwidth]{parameters.png}};
-  \node[align=left] at (image1.east) {\hspace{4.5cm} \bf Estimate parameters};}
-  \end{tikzpicture}
 
-    \begin{tikzpicture}[remember picture, overlay, font=\sffamily]
-      \onslide<3-4>{\node [align=left, xshift=0\textwidth,yshift=-0.25\textwidth] (image2) at (current page.center)
-            {\includegraphics[width = 0.25\textwidth]{uq.png}};
-      \node[align=left] at (image2.east) {\hspace{4cm} \bf Quantify uncertainties};}
-    \end{tikzpicture}
+
+\begin{frame}{Computational models are created from experimental data}
+    \begin{figure}
+      \only<1>{\includegraphics[width=1\textwidth]{neuron.png}}
+      \only<2->{\includegraphics[width=1\textwidth]{model_creation.png}}
+\end{figure}
+% \vspace{5mm}
+\begin{align*}
+    \only<-2>{ \color{white}\frac{{\mathrm d} V_m}{{\mathrm d} }}
+    \only<3>{ I &= C_m\frac{{\mathrm d} V_m}{{\mathrm d} t}  + I_{K} + I_{Na} + I_{l}}
+    \only<4>{I &= C_m\frac{{\mathrm d} V_m}{{\mathrm d} t}  + {\bf\color{red}I_{K}}+ {\bf\color{red}I_{Na}} + {\bf \color{red}I_{l}}}
+\end{align*}
 
 \end{frame}
 
 
-
-\begin{frame}{Uncertainty quantification is important }
+\begin{frame}{Different parameters give different model results}
+    \only<1>{\[I = C_m\frac{{\mathrm d} V_m}{{\mathrm d} t}  + {\bf\color{blue}I_{K}} + {\bf\color{green}I_{Na}} + {\bf\color{red}I_{l}}\]}
+    \begin{figure}
+        \only<1>{\includegraphics[width=0.4\textwidth]{parameters.png}}
+        \only<2>{\includegraphics[width=1\textwidth]{hh_basic.png}}
+      \end{figure}
 
 \end{frame}
 
 
+\begin{frame}{Uncertainty quantification relates uncertain parameters and model results}
+    \begin{figure}
+        \only<1>{\includegraphics[width=0.5\textwidth]{model1.png}}
+        \only<2>{\includegraphics[width=0.5\textwidth]{model2.png}}
+        \only<3>{\includegraphics[width=0.5\textwidth]{model3.png}}
+        \only<4>{\includegraphics[width=0.5\textwidth]{model4.png}}
+    \end{figure}
+\end{frame}
 
-\begin{frame}{Point wise comparison can be problematic since "the same" spike can occur at different times when varying the parameters}
+
+
+%
+% \begin{frame}{Creating a computational model consists of three steps, model creation, parameter estimation and uncertainty quantification}
+%     \begin{tikzpicture}[remember picture, overlay, font=\sffamily]
+%       \onslide<1-3>{\node [align=left, xshift=-0.35\textwidth,yshift=0.15\textwidth] (image3) at (current page.center)
+%             {$I = C_m\frac{{\mathrm d} V_m}{{\mathrm d} t}  + I_{\text{ion channels}}$};
+%       \node[align=left] at (image3.east) {\hspace{4cm} \bf Model creation};}
+%     \end{tikzpicture}
+%    %
+%    % \begin{tikzpicture}[remember picture, overlay, font=\sffamily]
+%    %   \onslide<1-3>{\node [align=left, xshift=-0.4\textwidth,yshift=0.15\textwidth] (image3) at (current page.center)
+%    %         {\includegraphics[width = 0.4\textwidth]{compartmental.png}};
+%    %   \node[align=left] at (image3.east) {\hspace{5cm} \bf Model creation};}
+%    % \end{tikzpicture}
+%
+%   \begin{tikzpicture}[remember picture, overlay, font=\sffamily]
+%   \onslide<2-3>{\node [align=left, xshift=-0.2\textwidth,yshift=-0.05\textwidth] (image1) at (current page.center)
+%       {\includegraphics[width = 0.15\textwidth]{parameters.png}};
+%   \node[align=left] at (image1.east) {\hspace{4.5cm} \bf Estimate parameters};}
+%   \end{tikzpicture}
+%
+%     \begin{tikzpicture}[remember picture, overlay, font=\sffamily]
+%       \onslide<3-4>{\node [align=left, xshift=0\textwidth,yshift=-0.25\textwidth] (image2) at (current page.center)
+%             {\includegraphics[width = 0.25\textwidth]{uq.png}};
+%       \node[align=left] at (image2.east) {\hspace{4cm} \bf Quantify uncertainties};}
+%     \end{tikzpicture}
+%
+% \end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \begin{frame}{Uncertainty quantification relates measurements errors and model results}
+% % \begin{itemize}
+% %     \item accuracy of model
+% %     \item effect of uncertain input
+% %     \item relationship between uncertain input and output
+% %
+% % \end{itemize}
+% \end{frame}
+\begin{frame}
+    \begin{center}
+        {\usebeamercolor[fg]{frametitle} \Large \bf Uncertainpy performs these calculations}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Variations in an action potential \\(90\% confidence interval)}
+   \vspace{-5mm}
+\begin{figure}
+   \only<1>{\includegraphics[width=1\textwidth]{hh_confidence.png}}
+   \only<2>{\includegraphics[width=1\textwidth]{hh_confidence_arrow.png}}
+\end{figure}
+\end{frame}
+
+
+
+\begin{frame}{\onslide<1->{Point wise comparison \onslide<2->{can be problematic since "the same" spike can occur at different times when varying the parameters}}}
    \vspace{-5mm}
    \begin{figure}
-      \only<1>{\includegraphics[width=0.8\textwidth]{hh_thin_extract.png}}
-      \only<2>{\includegraphics[width=0.8\textwidth]{hh_thin_extract_elipse.png}}
+    %   \only<1>{\includegraphics[width=1\textwidth]{hh_basic.png}}
+      \only<1>{\includegraphics[width=1\textwidth]{hh_line.png}}
+      \only<2->{\includegraphics[width=1\textwidth]{hh_arrows.png}}
    \end{figure}
 \end{frame}
 
 
 
-\begin{frame}{90\% confidence interval for the Hodgkin-Huxley model with original uncertainties in the parameters}
-   \vspace{-5mm}
-\begin{figure}
-   \only<1>{\includegraphics[width=0.8\textwidth]{confidence-interval.png}}
-   \only<2>{\includegraphics[width=0.8\textwidth]{confidence-interval_elipse.png}}
-\end{figure}
-\end{frame}
+% \begin{frame}{90\% confidence interval for the Hodgkin-Huxley model with original uncertainties in the parameters}
+%    \vspace{-5mm}
+% \begin{figure}
+%    \only<1>{\includegraphics[width=0.8\textwidth]{confidence-interval.png}}
+%    \only<2>{\includegraphics[width=0.8\textwidth]{confidence-interval_elipse.png}}
+% \end{figure}
+% \end{frame}
 
 
 \begin{frame}{The solution is to calculate the uncertainty for features such as the number of spikes}
 \vspace{-5mm}
 \begin{figure}
-   \includegraphics[width=0.8\textwidth]{hh_thin_extract_nrSpikes.png}
+   \includegraphics[width=1\textwidth]{hh_nrspikes.png}
 \end{figure}
 \end{frame}
 
-
-\begin{frame}{Sensitivity of the result for each parameter in the Hodgkin-Huxley model}
+\begin{frame}{Uncertainpy calculates the uncertainty for features such as the number of spikes}
 \vspace{-5mm}
 \begin{figure}
-   \includegraphics[width=1\textwidth]{sensitivity_grid.png}
+   \includegraphics[width=1\textwidth]{hh_nrspikes_bar.png}
 \end{figure}
 \end{frame}
+
+
+% \begin{frame}{Sensitivity of the result for each parameter in the Hodgkin-Huxley model}
+% \vspace{-5mm}
+% \begin{figure}
+%    \includegraphics[width=1\textwidth]{sensitivity_grid.png}
+% \end{figure}
+% \end{frame}
 
 
   \begin{frame}{Summary: UncertainPy is a novel Python toolbox, tailored to perform uncertainty quantification in neuroscience models}
+\vspace{-10mm}
+\begin{columns}
+
+     \column{.5\textwidth}
+     \begin{center}
+        \raggedright
+      \bf{Uncertainpy calculates uncertainty of a model from uncertain parameters}
+     \end{center}
+     \column{.5\textwidth}
+     \begin{center}
+            \includegraphics[width=0.6\textwidth]{hh_confidence_basic.png}
+     \end{center}
+
+ \end{columns}
+
+\vspace{5mm}
+
+\begin{columns}
+  \column{.5\textwidth}
+  \begin{center}
+      \raggedright
+   \bf{Uncertainpy uses features tailored to computational neuroscience models}
+  \end{center}
+       \column{.5\textwidth}
+     \begin{center}
+            \includegraphics[width=0.75\textwidth]{hh_nrspikes_basic.png}
+     \end{center}
+
+ \end{columns}
+
+\pause
+\begin{tikzpicture}[remember picture, overlay, font=\sffamily]
+
+  \node[align=left, yshift=0.1\textwidth] at (current page.south){ \bf \large Questions?};
+\end{tikzpicture}
+
 
   \begin{tikzpicture}[remember picture, overlay, font=\sffamily]
       \node [align=left, xshift=0.49\textwidth,yshift=-0.37\textwidth] (image2) at (current page.center)
             {\includegraphics[width = 0.35\textwidth]{cinpla.png}};
     \end{tikzpicture}
-
-   %  \begin{tikzpicture}[remember picture, overlay, font=\sffamily]
-   %      \node [align=left, xshift=-0.45\textwidth,yshift=-0.37\textwidth] (image2) at (current page.center)
-   %            {\includegraphics[width = 0.18\textwidth]{chaospy_logo.jpg}};
-   %    \end{tikzpicture}
-
-\pause
-\begin{tikzpicture}[remember picture, overlay, font=\sffamily]
-
-  \node[align=left, yshift=0.15\textwidth] at (current page.south){ \bf \large Questions?};
-\end{tikzpicture}
-
 
 
 \end{frame}
