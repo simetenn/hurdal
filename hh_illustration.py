@@ -1,6 +1,8 @@
 import uncertainpy
 import matplotlib.pyplot as plt
 
+plt.xkcd()
+
 parameterlist = [["gbar_Na", 120, None],
                  ["gbar_K", 36, None],
                  ["gbar_l", 0.3, None]]
