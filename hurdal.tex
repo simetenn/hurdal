@@ -126,7 +126,7 @@ columns=fixed
 
 \begin{frame}
 % \begin{center}
-    \textbf{\color{myred}\Large Uncertainpy: A Python toolbox \\
+    \textbf{\color{myred}\Large UncertainPy: A Python toolbox \\
     \vspace{1mm} for uncertainty quantification of \\
     \vspace{2mm} computational neuroscience models}
 % \end{center}
@@ -166,7 +166,7 @@ columns=fixed
 
 
 
-% \begin{frame}[fragile]{Uncertainpy is a Python toolbox for uncertainty quantification of computation neuroscience models}
+% \begin{frame}[fragile]{UncertainPy is a Python toolbox for uncertainty quantification of computation neuroscience models}
 
 
   %   \begin{tikzpicture}[remember picture, overlay, font=\sffamily]
@@ -197,7 +197,6 @@ columns=fixed
 
 
 
-
 \begin{frame}{Computational models are created from experimental data}
     \begin{figure}
       \only<1>{\includegraphics[width=1\textwidth]{neuron.png}}
@@ -223,14 +222,24 @@ columns=fixed
 \end{frame}
 
 
-\begin{frame}{Uncertainty quantification relates uncertain parameters and model results}
-    \begin{figure}
-        \only<1>{\includegraphics[width=0.5\textwidth]{model1.png}}
-        \only<2>{\includegraphics[width=0.5\textwidth]{model2.png}}
-        \only<3>{\includegraphics[width=0.5\textwidth]{model3.png}}
-        \only<4>{\includegraphics[width=0.5\textwidth]{model4.png}}
-    \end{figure}
+
+\begin{frame}{}
+
+Biological parameters are not fixed, but have inherent variability
+Measurements have errors
+
+Need a probabalistic approach
+
 \end{frame}
+
+% \begin{frame}{Uncertainty quantification relates uncertain parameters and model results}
+%     \begin{figure}
+%         \only<1>{\includegraphics[width=0.5\textwidth]{model1.png}}
+%         \only<2>{\includegraphics[width=0.5\textwidth]{model2.png}}
+%         \only<3>{\includegraphics[width=0.5\textwidth]{model3.png}}
+%         \only<4>{\includegraphics[width=0.5\textwidth]{model4.png}}
+%     \end{figure}
+% \end{frame}
 
 
 
@@ -287,7 +296,7 @@ columns=fixed
 % \end{frame}
 \begin{frame}
     \begin{center}
-        {\usebeamercolor[fg]{frametitle} \Large \bf Uncertainpy performs these calculations}
+        {\usebeamercolor[fg]{frametitle} \Large \bf UncertainPy performs these calculations}
     \end{center}
 \end{frame}
 
@@ -301,7 +310,7 @@ columns=fixed
 
 
 
-\begin{frame}{\onslide<1->{Point wise comparison \onslide<2->{can be problematic since "the same" spike can occur at different times when varying the parameters}}}
+\begin{frame}{\onslide<1->{Point wise comparison \onslide<2->{can be problematic since "the same" spike can occur at different times with different parameters}}}
    \vspace{-5mm}
    \begin{figure}
     %   \only<1>{\includegraphics[width=1\textwidth]{hh_basic.png}}
@@ -328,7 +337,7 @@ columns=fixed
 \end{figure}
 \end{frame}
 
-\begin{frame}{Uncertainpy calculates the uncertainty for features such as the number of spikes}
+\begin{frame}{UncertainPy calculates the uncertainty for features such as the number of spikes}
 \vspace{-5mm}
 \begin{figure}
    \includegraphics[width=1\textwidth]{hh_nrspikes_bar.png}
@@ -351,7 +360,7 @@ columns=fixed
      \column{.5\textwidth}
      \begin{center}
         \raggedright
-      \bf{Uncertainpy calculates uncertainty of a model from uncertain parameters}
+      \bf{UncertainPy calculates uncertainty of a model from uncertain parameters}
      \end{center}
      \column{.5\textwidth}
      \begin{center}
@@ -366,7 +375,7 @@ columns=fixed
   \column{.5\textwidth}
   \begin{center}
       \raggedright
-   \bf{Uncertainpy uses features tailored to computational neuroscience models}
+   \bf{UncertainPy uses features tailored to computational neuroscience models}
   \end{center}
        \column{.5\textwidth}
      \begin{center}
