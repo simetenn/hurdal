@@ -223,14 +223,26 @@ columns=fixed
 
 
 
-\begin{frame}{}
+% \begin{frame}{Problem: Experimental measurements always contain errors}
+%     \begin{figure}
+%         \includegraphics[width=1\textwidth]{dist.png}
+%     \end{figure}
+% \end{frame}
 
-Biological parameters are not fixed, but have inherent variability
-Measurements have errors
 
-Need a probabalistic approach
 
+\begin{frame}{Problem: Biological parameters are not fixed, but have inherent variability}
+    \begin{figure}
+\includegraphics[width=1\textwidth]{dist.png}
+\end{figure}
 \end{frame}
+
+\begin{frame}{Solution: Perform an uncertainty quantification}
+    \begin{figure}
+        \includegraphics[width=0.5\textwidth]{model3.png}
+    \end{figure}
+\end{frame}
+
 
 % \begin{frame}{Uncertainty quantification relates uncertain parameters and model results}
 %     \begin{figure}
@@ -300,7 +312,7 @@ Need a probabalistic approach
     \end{center}
 \end{frame}
 
-\begin{frame}{Variations in an action potential \\(90\% confidence interval)}
+\begin{frame}{Result: Variations in an action potential \\(90\% confidence interval)}
    \vspace{-5mm}
 \begin{figure}
    \only<1>{\includegraphics[width=1\textwidth]{hh_confidence.png}}
@@ -310,16 +322,14 @@ Need a probabalistic approach
 
 
 
-\begin{frame}{\onslide<1->{Point wise comparison \onslide<2->{can be problematic since "the same" spike can occur at different times with different parameters}}}
+\begin{frame}{\onslide<1->{Point wise comparison \onslide<2->{is problematic since "the same" spike can occur at different times with different parameters}}}
    \vspace{-5mm}
    \begin{figure}
     %   \only<1>{\includegraphics[width=1\textwidth]{hh_basic.png}}
       \only<1>{\includegraphics[width=1\textwidth]{hh_line.png}}
-      \only<2->{\includegraphics[width=1\textwidth]{hh_arrows.png}}
+      \only<2>{\includegraphics[width=1\textwidth]{hh_arrows.png}}
    \end{figure}
 \end{frame}
-
-
 
 % \begin{frame}{90\% confidence interval for the Hodgkin-Huxley model with original uncertainties in the parameters}
 %    \vspace{-5mm}
@@ -330,7 +340,7 @@ Need a probabalistic approach
 % \end{frame}
 
 
-\begin{frame}{The solution is to calculate the uncertainty for features such as the number of spikes}
+\begin{frame}{Solution: calculate the uncertainty for features such as the number of spikes {\color{white} dummy text dummy text dummy text dummy text dummy text} }
 \vspace{-5mm}
 \begin{figure}
    \includegraphics[width=1\textwidth]{hh_nrspikes.png}
@@ -360,7 +370,7 @@ Need a probabalistic approach
      \column{.5\textwidth}
      \begin{center}
         \raggedright
-      \bf{UncertainPy calculates uncertainty of a model from uncertain parameters}
+      \bf{UncertainPy calculates uncertainties of a model from uncertain parameters}
      \end{center}
      \column{.5\textwidth}
      \begin{center}
@@ -375,7 +385,7 @@ Need a probabalistic approach
   \column{.5\textwidth}
   \begin{center}
       \raggedright
-   \bf{UncertainPy uses features tailored to computational neuroscience models}
+   \bf{UncertainPy is feature based}
   \end{center}
        \column{.5\textwidth}
      \begin{center}
@@ -384,17 +394,19 @@ Need a probabalistic approach
 
  \end{columns}
 
+
+   \begin{tikzpicture}[remember picture, overlay, font=\sffamily]
+       \node [align=left, xshift=0.49\textwidth,yshift=-0.37\textwidth] (image2) at (current page.center)
+             {\includegraphics[width = 0.35\textwidth]{cinpla.png}};
+     \end{tikzpicture}
+
+
 \pause
 \begin{tikzpicture}[remember picture, overlay, font=\sffamily]
 
   \node[align=left, yshift=0.1\textwidth] at (current page.south){ \bf \large Questions?};
 \end{tikzpicture}
 
-
-  \begin{tikzpicture}[remember picture, overlay, font=\sffamily]
-      \node [align=left, xshift=0.49\textwidth,yshift=-0.37\textwidth] (image2) at (current page.center)
-            {\includegraphics[width = 0.35\textwidth]{cinpla.png}};
-    \end{tikzpicture}
 
 
 \end{frame}
