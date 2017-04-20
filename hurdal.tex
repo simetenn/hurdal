@@ -213,11 +213,11 @@ columns=fixed
 
 
 \begin{frame}{Different parameters give different model results}
-    \only<1>{\[I = C_m\frac{{\mathrm d} V_m}{{\mathrm d} t}  + {\bf\color{blue}I_{K}} + {\bf\color{green}I_{Na}} + {\bf\color{red}I_{l}}\]}
+    \[I = C_m\frac{{\mathrm d} V_m}{{\mathrm d} t}  + {\bf\color{blue}I_{K}} + {\bf\color{green}I_{Na}} + {\bf\color{red}I_{l}}\]
+    \vspace{-5mm}
     \begin{figure}
-        \only<1>{\includegraphics[width=0.4\textwidth]{parameters.png}}
-        \only<2>{\includegraphics[width=1\textwidth]{hh_basic.png}}
-      \end{figure}
+   {\includegraphics[width=1\textwidth]{hh_basic.png}}
+   \end{figure}
 
 \end{frame}
 
@@ -237,9 +237,11 @@ columns=fixed
 \end{figure}
 \end{frame}
 
-\begin{frame}{Solution: Perform an uncertainty quantification}
+\begin{frame}{Solution: Perform an uncertainty quantification, which relates uncertain input to uncertain output}
     \begin{figure}
-        \includegraphics[width=0.5\textwidth]{model3.png}
+      %  \only<1>{\includegraphics[width=0.6\textwidth]{model2.png}}
+       {\includegraphics[width=0.6\textwidth]{model3.png}}
+
     \end{figure}
 \end{frame}
 
@@ -322,7 +324,7 @@ columns=fixed
 
 
 
-\begin{frame}{\onslide<1->{Point wise comparison \onslide<2->{is problematic since "the same" spike can occur at different times with different parameters}}}
+\begin{frame}{\onslide<1->{Pointwise comparison \onslide<2->{is problematic since "the same" spike can occur at different times with different parameters}}}
    \vspace{-5mm}
    \begin{figure}
     %   \only<1>{\includegraphics[width=1\textwidth]{hh_basic.png}}
@@ -340,7 +342,7 @@ columns=fixed
 % \end{frame}
 
 
-\begin{frame}{Solution: calculate the uncertainty for features such as the number of spikes {\color{white} dummy text dummy text dummy text dummy text dummy text} }
+\begin{frame}{Solution: Calculate the uncertainty for features such as the number of spikes {\color{white} dummy text dummy text dummy text dummy text dummy text} }
 \vspace{-5mm}
 \begin{figure}
    \includegraphics[width=1\textwidth]{hh_nrspikes.png}
